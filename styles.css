@@ -5,11 +5,14 @@ body{
   margin: 0px;
   background-color:#444;
   font-size: 18px;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 body, a:link, a:visited, a:active{
-  color: lightblue;
+  color: white;
 }
-.title, .addDancerButton, .addDancer1{
+
+.title, .addDancerButton, .lineupbutton{
   padding:5px 12px;
   float:right;
 }
@@ -21,11 +24,32 @@ body, a:link, a:visited, a:active{
   background-color: #777;
 }
 .dancer{
-  border:10px solid red;
-  border-radius:10px;
+  
+  border:50px solid red;
+  border-radius:150px;
   position:absolute;
 }
 .classydancer{
-  /*border: 5px solid green;*/
+position:absolute;
+-webkit-animation: rotation 2s infinite linear;
+}
+.popdancer {
   position:absolute;
+  /*-webkit-animation: rotation 2s infinite linear;*/
+  transition: all .2s ease-in-out; 
+}
+.dancer:hover,
+.classydancer:hover,
+.popdancer:hover {
+  cursor: pointer;
+  transform: scale(2.1);
+}
+
+@-webkit-keyframes rotation {
+    from {
+        -webkit-transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(359deg);
+    }
 }
